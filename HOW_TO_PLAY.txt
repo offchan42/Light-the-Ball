@@ -1,0 +1,26 @@
+==HOW TO PLAY==
+Click on the balls on the left side to toggle its state.
+Then the balls will feed their electricity towards the gates.
+Your goal is to light all the balls on the right up.
+
+
+==LOGIC GATES INFORMATION==
+The state can be either activated or deactivated. (1 or 0)
+The logic gates contained in the game are AND, OR, NOT, XOR.
+
+OR symbol is curvy at its base compared to AND.
+NOT symbol is a triangle with a circle at the end.
+XOR symbol is like OR but with double stroke base.
+
+AND, OR, NOT mechanics are simple so I'm not going to explain it.
+XOR is a bit tougher to understand for newbies but I'm gonna tell you an intuition.
+XOR is just a gate that is activated whenever there exists only one activated input. ([1 XOR 0] = 1 and vice versa)
+In general cases where XOR gates are chained, if the sum of the inputs are odd (1,3,5,7,...), XOR will turn on. 
+(See example of chained XOR gates in level 5)
+
+==TROUBLESHOOTING==
+Please open the game on Firefox, Internet Explorer, Edge or any other browsers except Chrome.
+Chrome requires files to be uploaded on the server and does not allow playing the file on our own computer.
+The game is optimized for screen aspect ratio 16:9.
+
+-Developer: Off
