@@ -21,9 +21,9 @@
 
         public override void SetOn(bool isOn)
         {
-            base.SetOn(FeedInput(input1Socket, input2Socket));
+            base.SetOn(GetOutput(input1Socket, input2Socket));
         }
 
-        public abstract bool FeedInput(IOnAble a, IOnAble b);
+        public abstract bool GetOutput(IOnAble a, IOnAble b);
     }
 }
