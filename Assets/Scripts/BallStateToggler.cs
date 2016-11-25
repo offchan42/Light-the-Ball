@@ -2,6 +2,7 @@
 
 namespace Assets.Scripts
 {
+    [RequireComponent(typeof(OnAbleBall))]
     public class BallStateToggler : MonoBehaviour
     {
         private OnAbleBall onAbleBall;
