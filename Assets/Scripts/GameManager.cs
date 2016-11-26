@@ -10,6 +10,7 @@ namespace Assets.Scripts
     {
         public static GameManager instance;
         public Canvas winCanvas;
+        public AudioPlayerLib winPlayerLib;
 
         [Tooltip("Time in seconds to ensure win")]
         public float winPeriod = 0.8f;
@@ -76,6 +77,7 @@ namespace Assets.Scripts
                 {
                     //print("YOU WIN! Balls Activated: " + outputBalls.Count);
                     winCanvas.gameObject.SetActive(true);
+                    winPlayerLib.PlayNow();
                     break;
                 }
                 yield return new WaitForSeconds(0.2f);
