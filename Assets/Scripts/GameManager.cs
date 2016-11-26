@@ -19,7 +19,7 @@ namespace Assets.Scripts
 
         public void AddOutputBall(OnAbleBall outputBall)
         {
-            print("Adding ball " + outputBall.name);
+            //print("Adding ball " + outputBall.name);
             Debug.Assert(!outputBall.inputBall, "Invalid Ball Type Added to GameManager");
             outputBalls.Add(outputBall);
         }
@@ -41,7 +41,7 @@ namespace Assets.Scripts
         public void NextLevel()
         {
             int level = SceneManager.GetActiveScene().buildIndex;
-            print("Loading next level " + (level + 1));
+            //print("Loading next level " + (level + 1));
             SceneManager.LoadScene(level + 1);
         }
 
@@ -74,7 +74,7 @@ namespace Assets.Scripts
                 }
                 if (Time.timeSinceLevelLoad - winStopTime >= winPeriod)
                 {
-                    print("YOU WIN! Balls Activated: " + outputBalls.Count);
+                    //print("YOU WIN! Balls Activated: " + outputBalls.Count);
                     winCanvas.gameObject.SetActive(true);
                     break;
                 }
