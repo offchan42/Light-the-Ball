@@ -11,6 +11,21 @@ namespace Assets.Scripts
         private GameObject lightSource;
         private Animator animator;
 
+        public override void SetOn(bool isOn)
+        {
+            base.SetOn(isOn);
+            lightSource.SetActive(onState);
+            if (animator != null)
+            {
+                animator.SetBool("Swinging", isOn);
+            }
+        }
+
+        public void ToggleOnState()
+        {
+            SetOn(!onState);
+        }
+
         private void Awake()
         {
             lightSource = transform.FindChild(LightSourceName).gameObject;
@@ -27,21 +42,6 @@ namespace Assets.Scripts
                 GameManager.instance.AddOutputBall(this);
             }
             animator = GetComponent<Animator>();
-        }
-
-        public override void SetOn(bool isOn)
-        {
-            base.SetOn(isOn);
-            lightSource.SetActive(onState);
-            if (animator != null)
-            {
-                animator.SetBool("Swinging", isOn);
-            }
-        }
-
-        public void ToggleOnState()
-        {
-            SetOn(!onState);
         }
     }
 }

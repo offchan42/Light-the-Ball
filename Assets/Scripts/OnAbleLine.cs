@@ -5,13 +5,19 @@ namespace Assets.Scripts
     [RequireComponent(typeof(LineRenderer))]
     public class OnAbleLine : OnAbleObject
     {
+        private static Vector3 backVector = Vector3.back;
         public OnAbleSocket inputSocket;
         public OnAbleSocket outputSocket;
         public Material offMaterial;
         public Material onMaterial;
 
         private LineRenderer lineRenderer;
-        private static Vector3 backVector = Vector3.back;
+
+        public override void SetOn(bool isOn)
+        {
+            base.SetOn(isOn);
+            lineRenderer.material = isOn ? onMaterial : offMaterial;
+        }
 
         private void Awake()
         {
@@ -20,13 +26,15 @@ namespace Assets.Scripts
 
         private void Start()
         {
-            lineRenderer.SetPositions(new[] { inputSocket.transform.position + backVector, outputSocket.transform.position + backVector });
+            lineRenderer.SetPositions(new[]
+            {inputSocket.transform.position + backVector, outputSocket.transform.position + backVector});
             SetOn(onState);
         }
 
         private void Update()
         {
-            lineRenderer.SetPositions(new[] { inputSocket.transform.position + backVector, outputSocket.transform.position + backVector });
+            lineRenderer.SetPositions(new[]
+            {inputSocket.transform.position + backVector, outputSocket.transform.position + backVector});
         }
 
 
@@ -40,12 +48,6 @@ namespace Assets.Scripts
         {
             inputSocket.OnStateChanged -= SetOn;
             OnStateChanged -= outputSocket.SetOn;
-        }
-
-        public override void SetOn(bool isOn)
-        {
-            base.SetOn(isOn);
-            lineRenderer.material = isOn ? onMaterial : offMaterial;
         }
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Assets.Scripts.Gates
 {
-    public class NotGate : OnAbleGate { 
-
+    public class NotGate : OnAbleGate
+    {
         public override bool GetOutput(IOnAble a, IOnAble b)
         {
             if (b != null)

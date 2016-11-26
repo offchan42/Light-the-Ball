@@ -10,6 +10,15 @@ namespace Assets.Scripts
         private bool isInput; // determine whether this socket should listen to the line or the gate
         private SpriteRenderer spriteRenderer;
 
+        public override void SetOn(bool isOn)
+        {
+            base.SetOn(isOn);
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.enabled = isOn;
+            }
+        }
+
         private void Awake()
         {
             onAbleParent = GetComponentInParent<OnAbleGate>() ?? (OnAbleObject) GetComponentInParent<OnAbleBall>();
@@ -47,15 +56,6 @@ namespace Assets.Scripts
             else
             {
                 OnStateChanged += onAbleParent.SetOn;
-            }
-        }
-
-        public override void SetOn(bool isOn)
-        {
-            base.SetOn(isOn);
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.enabled = isOn;
             }
         }
     }

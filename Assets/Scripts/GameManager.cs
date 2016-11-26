@@ -11,9 +11,39 @@ namespace Assets.Scripts
         public static GameManager instance;
         public Canvas winCanvas;
 
-        [Tooltip("Time in seconds to ensure win")] public float winPeriod = 0.8f;
+        [Tooltip("Time in seconds to ensure win")]
+        public float winPeriod = 0.8f;
+
         private List<OnAbleBall> outputBalls;
         private float winStopTime;
+
+        public void AddOutputBall(OnAbleBall outputBall)
+        {
+            print("Adding ball " + outputBall.name);
+            Debug.Assert(!outputBall.inputBall, "Invalid Ball Type Added to GameManager");
+            outputBalls.Add(outputBall);
+        }
+
+        public bool IsWin()
+        {
+            var win = true;
+            foreach (OnAbleBall outputBall in outputBalls)
+            {
+                win &= outputBall.IsOn();
+                if (!win)
+                {
+                    break;
+                }
+            }
+            return win;
+        }
+
+        public void NextLevel()
+        {
+            int level = SceneManager.GetActiveScene().buildIndex;
+            print("Loading next level " + (level + 1));
+            SceneManager.LoadScene(level + 1);
+        }
 
         private void Awake()
         {
@@ -50,31 +80,6 @@ namespace Assets.Scripts
                 }
                 yield return new WaitForSeconds(0.2f);
             }
-        }
-
-        public void AddOutputBall(OnAbleBall outputBall)
-        {
-            print("Adding ball " + outputBall.name);
-            Debug.Assert(!outputBall.inputBall, "Invalid Ball Type Added to GameManager");
-            outputBalls.Add(outputBall);
-        }
-
-        public bool IsWin()
-        {
-            var win = true;
-            foreach (var outputBall in outputBalls)
-            {
-                win &= outputBall.IsOn();
-                if (!win) break;
-            }
-            return win;
-        }
-
-        public void NextLevel()
-        {
-            int level = SceneManager.GetActiveScene().buildIndex;
-            print("Loading next level " + (level+1));
-            SceneManager.LoadScene(level+1);
         }
     }
 }

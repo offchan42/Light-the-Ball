@@ -9,8 +9,8 @@ namespace Assets.Scripts
         // Use this for initialization
         private void Start()
         {
-            var index = Random.Range(0, candidateSprites.Length);
-            var chosenSprite = candidateSprites[index];
+            int index = Random.Range(0, candidateSprites.Length);
+            Sprite chosenSprite = candidateSprites[index];
             var spriteRenderer = GetComponent<SpriteRenderer>();
             if (spriteRenderer == null)
             {
