@@ -11,6 +11,7 @@ namespace Assets.Scripts
         public static GameManager instance;
         public Canvas winCanvas;
         public AudioPlayerLib winAudioLib;
+        public bool lastScene;
 
         [Tooltip("Time in seconds to ensure win")]
         public float winPeriod = 0.8f;
@@ -43,7 +44,14 @@ namespace Assets.Scripts
         {
             int level = SceneManager.GetActiveScene().buildIndex;
             //print("Loading next level " + (level + 1));
-            SceneManager.LoadScene(level + 1);
+            if (lastScene)
+            {
+                SceneManager.LoadScene(0);
+            }
+            else
+            {
+                SceneManager.LoadScene(level + 1);
+            }
         }
 
         private void Awake()
