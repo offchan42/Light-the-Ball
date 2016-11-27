@@ -86,6 +86,15 @@ namespace Assets.Scripts
                     //print("YOU WIN! Balls Activated: " + outputBalls.Count);
                     winCanvas.gameObject.SetActive(true);
                     winAudioLib.PlayNow();
+                    foreach (OnAbleBall onAbleBall in outputBalls)
+                    {
+                        var animator = onAbleBall.GetComponent<Animator>();
+                        if (animator != null)
+                        {
+                            animator.SetBool("Swinging", false);
+                            animator.SetBool("Rotating", true);
+                        }
+                    }
                     break;
                 }
                 yield return new WaitForSeconds(0.2f);
