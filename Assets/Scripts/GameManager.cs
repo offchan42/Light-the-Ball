@@ -12,6 +12,7 @@ namespace Assets.Scripts
         public Canvas winCanvas;
         public AudioPlayerLib winAudioLib;
         public bool lastScene;
+        public float nextStageDelay = 2f;
 
         [Tooltip("Time in seconds to ensure win")]
         public float winPeriod = 0.8f;
@@ -54,6 +55,11 @@ namespace Assets.Scripts
             }
         }
 
+        public void ShowNextStage()
+        {
+            winCanvas.gameObject.SetActive(true);
+        }
+
         private void Awake()
         {
             if (instance == null)
@@ -84,7 +90,7 @@ namespace Assets.Scripts
                 if (Time.timeSinceLevelLoad - winStopTime >= winPeriod)
                 {
                     //print("YOU WIN! Balls Activated: " + outputBalls.Count);
-                    winCanvas.gameObject.SetActive(true);
+                    Invoke("ShowNextStage", nextStageDelay);
                     winAudioLib.PlayNow();
                     foreach (OnAbleBall onAbleBall in outputBalls)
                     {

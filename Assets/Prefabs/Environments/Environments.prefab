@@ -765,6 +765,7 @@ MonoBehaviour:
   winCanvas: {fileID: 223000013963211404}
   winAudioLib: {fileID: 114000010503682238}
   lastScene: 0
+  nextStageDelay: 2
   winPeriod: 0.8
 --- !u!114 &114000013203629300
 MonoBehaviour:
