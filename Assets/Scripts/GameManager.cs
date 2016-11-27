@@ -83,5 +83,13 @@ namespace Assets.Scripts
                 yield return new WaitForSeconds(0.2f);
             }
         }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
     }
 }
