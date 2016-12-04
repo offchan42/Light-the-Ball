@@ -8,4 +8,4 @@ The game idea is based on logic gates like AND, OR, NOT, and XOR.
 ## You can now [Play on Kongregate](http://www.kongregate.com/games/off99555/light-the-ball)!
 
 ## Disclaimer
-The game is far from finished. This is the only prototype version which has only 5 levels of randomness.
+The game is far from finished. This is the only prototype version which has only 6 levels of randomness.
