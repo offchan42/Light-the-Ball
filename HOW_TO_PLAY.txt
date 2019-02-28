@@ -19,8 +19,11 @@ In general cases where XOR gates are chained, if the sum of the inputs are odd (
 (See example of chained XOR gates in level 5)
 
 ==TROUBLESHOOTING==
-Please open the game on Firefox, Internet Explorer, Edge or any other browsers except Chrome.
-Chrome requires files to be uploaded on the server and does not allow playing the file on our own computer.
+
+- If you download the game (web build) to be run on your PC, please use any browsers except Chrome because it requires the file
+  to be uploaded to a server. If you run the game locally on Chrome, it will not work.
+  But if you play online, it will work with any browser.
+
 The game is optimized for screen aspect ratio 16:9.
 
 -Developer: Off
