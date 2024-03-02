@@ -5,7 +5,7 @@ All you do is click on the input balls to try and activate all the output balls.
 The game idea is based on logic gates like AND, OR, NOT, and XOR.
 
 <!--## [CLICK HERE to Play using WebGL technology](http://angsila.cs.buu.ac.th/~57160041/games/Light%20the%20Ball/)-->
-## You can now [play on Kongregate](http://www.kongregate.com/games/off99555/light-the-ball)!
+## You can now [play on Kongregate](http://www.kongregate.com/games/offchan42/light-the-ball)!
 [Read Detailed How-to-play here](HOW_TO_PLAY.txt)
 
 ## Disclaimer
